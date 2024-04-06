@@ -1,6 +1,8 @@
 from app.database.base import Base
 import sqlalchemy as sa
 
+from datetime import datetime
+
 
 class User(Base):
     __tablename__ = "users"
@@ -10,5 +12,5 @@ class User(Base):
     password = sa.Column(sa.String, nullable=False)
     first_name = sa.Column(sa.String, nullable=False)
     last_name = sa.Column(sa.String, nullable=False)
-    created_timestamp = sa.Column(sa.DateTime, nullable=False)
-    updated_timestamp = sa.Column(sa.DateTime, nullable=False)
+    created_timestamp = sa.Column(sa.DateTime, nullable=False, default=sa.func.now())
+    updated_timestamp = sa.Column(sa.DateTime, nullable=False, default=sa.func.now())
