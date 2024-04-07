@@ -13,4 +13,4 @@ class User(Base):
     first_name = sa.Column(sa.String, nullable=False)
     last_name = sa.Column(sa.String, nullable=False)
     created_timestamp = sa.Column(sa.DateTime, nullable=False, default=sa.func.now())
-    updated_timestamp = sa.Column(sa.DateTime, nullable=False, default=sa.func.now())
+    updated_timestamp = sa.Column(sa.DateTime, nullable=False, default=sa.func.now(), onupdate=sa.func.now())
